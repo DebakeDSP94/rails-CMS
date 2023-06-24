@@ -1,0 +1,9 @@
+<%= form_with(model: topic) do |f| %>
+  <div class="form-group">
+    <%= f.label :Create_topic %>
+    <%= f.text_field :title, class: 'form-control', placeholder: 'New Topic'%>
+  </div>
+    <div class="form-group">
+    <%= f.submit "Submit", class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

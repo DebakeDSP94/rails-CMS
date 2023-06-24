@@ -51,7 +51,7 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -86,4 +86,21 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'petergate'
 
-gem 'rubocop', require: false
+gem 'bootstrap', '~> 5.1.3'
+gem 'carrierwave', '~> 2.2.0'
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
+gem 'friendly_id', '~> 5.4.0'
+gem 'inline_svg'
+gem 'kaminari', '~> 1.2.1'
+gem 'mini_magick', '~> 4.11.0'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+gem 'simple_form'
+gem 'vanilla_nested'
+gem 'wilson_view_tool', '~> 0.1.0'
+
+group :development do
+  gem 'annotate'
+end

@@ -1,0 +1,15 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+  <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+
+  <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+  <div data-controller="read-more" data-controller='trix-mark' data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+    <p data-read-more-target="content">
+      <%= truncate(blog.body.to_plain_text, length: 200) %>
+    </p>
+    <button data-action="read-more#toggle click->trix-mark#btnClick" class="btn btn-outline-primary" >Read more</button>
+    <template data-read-more-target="full" data-trix-mark-target="readbtn">
+      <%= blog.body %>
+    </template>
+  </div>
+</div>

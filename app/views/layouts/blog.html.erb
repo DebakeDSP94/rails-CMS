@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+     <meta name="keywords" content="<% @seo_keywords %>" />
+
+     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+
+     <%= favicon_link_tag 'favicons/favicon.ico' %>
+
+    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', "data-turbo-track": "reload", defer: true %>
+    <meta name="turbo-visit-control" content="reload">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  </head>
+
+  <body>
+    <div  data-controller="trix-mark">
+      <div data-trix-mark-target="source">
+
+        <%= render 'shared/application_nav' %>
+        <%= render 'shared/blog_masthead' %>
+
+        <div class="container">
+          <div class="row">
+            <%= yield %>
+            <%= render 'shared/blog_sidebar' %>
+          </div>
+          <%= render 'shared/footer' %>
+          <%= render 'shared/flash_container' %>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
